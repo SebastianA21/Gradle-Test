@@ -9,7 +9,7 @@ class AlumnoTest {
     @Test
     void getName() {
         Alumno alumno = new Alumno("Juan");
-        assertEquals("Juan", alumno.getName());
+        assertEquals("Juanes", alumno.getName());
     }
 
     @Test
