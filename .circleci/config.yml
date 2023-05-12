@@ -1,14 +1,7 @@
-jobs:
-  build-and-test:
-    docker:
-      - image: cimg/node:16.10
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: npm
-      - run:
-          name: Run tests
-          command: npm test
+version: '2.1'
+orbs:
+  gradle: circleci/gradle@x.y
+workflows:
+  checkout-build-test:
+    jobs:
+      - gradle/test
